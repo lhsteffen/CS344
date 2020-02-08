@@ -1,0 +1,92 @@
+Luke Steffen
+CS344-Lab1
+
+
+b. 
+
+  i. The GPS problem solver is implemented as a group of functions with no
+  class definition. The technical function is called gps(), but this function
+  calls on other functions with the gps.py file.
+
+  ii. Initial states are of type: String
+      Goal states are of type: String
+      Operators are of type: String
+
+  iii. The mechanism is recursive. This recursion is done over three
+  functions. achieve_all() calls achieve(), which in turn calls
+  apply_operator(). The function apply_operator() in turn calls achieve_all
+  which allows for recursion within the program.
+
+d.
+
+  i. The famous puzzle that this code model sovles is the Monkey and
+  Bananas problem. The rules of the Monkey and Bananas problem is that
+  there is a monkey within a room with bananas suspended on the ceiling. The
+  monkey is not able to reach the bananas from the floor, but there is a
+  chair in the corner of the room the monkey can use to reach the bananas.
+  The monkey knows how to move around, push the chair, carry other things,
+  and reach for the bananas. The puzzle asks what is the best sequence the
+  monkey can take to reach the bananas? This code faithfully implements the
+  Monkey and Bananas problem with a few minor differences. 
+
+  ii. Each domain action specifies an action to be taken, the preconditions
+  required to complete the action, states that will be added after the
+  action is taken, and states that will be deleted after the action is
+  taken. 
+
+  iii. The GPS mechanism achieves its goal by first making note of its
+  initial states and goal states. After these have been noted, the GPS
+  loops through each goal in its list, trying to complete them sequentially
+  by completing actions. In this problem, the only goal stated is 'not
+  hungry.' The general completion of each goal state is done within the
+  achieve_all() function. To complete each goal, the achieve_all function
+  calls the achieve() function, which looks through each action to find
+  a suitable action that will reach its goal, namely an action that has
+  the goal state in its add-list and has all its preconditions statisfied.
+  Specifically, the achieve() function looks for the action which will
+  meet the goal requirement, regardless of whether those preconditions are
+  met. In this case, the achieve() function would find the 'eat bananas'
+  action as the best action to achieve its goal. Once this action is found,
+  the achieve() function calls the apply_operator() function to handle the
+  action it has chosen. The apply_operator() function is the function that
+  checks the action it has been given to see if the preconditions match the
+  current state. If the preconditions are not met, it will recall the 
+  achieve_all() function, but the goals of this achieve_all() function are
+  the preconditions of the action needed to achieve the final goal. On top
+  of this, apply_operator() will also update the goal_stack to indicate that
+  on top of completing the preconditions, the function is also trying to
+  accomplish the main goal. This prevents infinite looping from going in
+  circles. In this first case, apply_operator() would make the new,
+  immediate goal 'has bananas' while adding 'not hungry' to the goal_stack.
+  From this processm, the GPS essentially works backwards from the goal to
+  its first state through recursion. On the final recursion, when achieve()
+  is called, it will see that its immediate goal is in states and return
+  states to achieve_all(), which will in turn return states to the 
+  apply_operator() which called it. The apply_operator() function will
+  return the result state back up to the achieve() function that called it,
+  and the achieve() function will return the results given to it up to
+  achieve_all(). This unwinding will continue until the program has created
+  the list of actions needed to complete the goal, completing the function. 
+  
+      
+
+  iv. This code is artificially intelligent if the thinking humanly
+  definition of artificial intelligence is considered. While the GPS is a
+  more shallow example of artificial intelligence, limited by the few
+  number of actions it can take, the model created by Allen Newell and 
+  Herbert Simon attempts to recreate a human's problem solving thought
+  process within a machine. While its ability is limited, the GPS counts
+  as artificial intelligence according to the thinking humanly definition.
+
+  v. A monkey that was able to solve this problem within the real world
+  would show a level of intelligence. This is because a monkey's number
+  of actions is far greater than that of the GPS. A real monkey is not 
+  restricted in its actions to moving a chair, climbing on the chair,
+  reaching for bananas, dropping a ball, and eating bananas. Because of the
+  monkey's far greater list of actions it can take and underfined outcomes
+  for each of those actions, the monkey requires far more intelligence to
+  solve this problem than the GPS. Because of the monkey's extended list of
+  actions and higher uncertainty about the outcome of each action, solving
+  this problem would show a level of intelligence.
+
+      

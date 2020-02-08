@@ -1,16 +1,8 @@
-"""
-    This module implements the simple blocks world using PAIP GPS.
-"""
-from gps import gps
-
-# Formulate the problem states and actions.
 problem = {
 
-    # Initial and goal states for problem b
     'initial': ['space on a', 'a on table', 'space on b', 'b on table2', 'space on c', 'c on table3'],
     'goal': ['space on a', 'a on b', 'b on c', 'c on table', 'space on table2', 'space on table3'],
 
-    # Initial and goal states for problem a
     #'initial': ['space on table', 'space on b', 'b on table2', 'space on c', 'c on a', 'a on table3'],
     #'goal': ['space on b', 'b on table', 'space on a', 'a on table2', 'space on c', 'c on table3'],
 
@@ -983,20 +975,3 @@ problem = {
         ##### END
     ]
 }
-
-
-if __name__ == '__main__':
-
-    # Use GPS to solve the problem formulated above.
-    actionSequence = gps(
-        problem['initial'],
-        problem['goal'],
-        problem['actions']
-    )
-
-    # Print the solution, if there is one.
-    if actionSequence is not None:
-        for action in actionSequence:
-            print(action)
-    else:
-        print('plan failure...')

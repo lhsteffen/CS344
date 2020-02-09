@@ -6,13 +6,13 @@ from gps import gps
 # Formulate the problem states and actions.
 problem = {
 
-    # Initial and goal states for problem b
-    'initial': ['space on a', 'a on table', 'space on b', 'b on table2', 'space on c', 'c on table3'],
-    'goal': ['space on a', 'a on b', 'b on c', 'c on table', 'space on table2', 'space on table3'],
+    # Initial and goal states for problem b (Sussman Anomaly)
+    #'initial': ['space on a', 'a on table', 'space on b', 'b on table2', 'space on c', 'c on table3'],
+    #'goal': ['space on a', 'a on b', 'b on c', 'c on table', 'space on table2', 'space on table3'],
 
     # Initial and goal states for problem a
-    #'initial': ['space on table', 'space on b', 'b on table2', 'space on c', 'c on a', 'a on table3'],
-    #'goal': ['space on b', 'b on table', 'space on a', 'a on table2', 'space on c', 'c on table3'],
+    'initial': ['space on table', 'space on b', 'b on table2', 'space on c', 'c on a', 'a on table3'],
+    'goal': ['space on b', 'b on table', 'space on a', 'a on table2', 'space on c', 'c on table3'],
 
     'actions': [
         {

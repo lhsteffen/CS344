@@ -7,7 +7,8 @@ and you have a phone book. The solution is to repair your battery so
 the car can be used to drive to school, but this means you lose money
 for repairing your car. If you try to keep your money, your car cannot
 drive your kid to school because it is broken. The achievement of one goal
-erases the progress of another goal.
+erases the progress of another goal. Making this a problem that the GPS
+cannot solve.
 
 @author: Luke Steffen (lhs3)
 @version: 02/07/2020

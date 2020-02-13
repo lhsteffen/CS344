@@ -15,3 +15,11 @@ Blocks World problem to demonstrate the strengths and limitations of the algorit
 Sussman Anomaly to show the limitations of the GPS. The lab also asks to come up with a problem that the GPS can 
 not solve.
 
+### Lab 02
+
+Lab 02 is about local search algorithms. This lab uses both the hill climbing and simulated annealing algorithms
+to demonstrate the general idea behind local search algorithms. This lab shows the benefits and drawbacks of both
+algorithms, showing how hill climbing is faster than simulated annealing, but may not find the global maxima if
+local maxima are present. This lab shows how each algorithm works by using two graphs of an absolute function and
+an absolute sin function.
+

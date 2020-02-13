@@ -1,0 +1,39 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 02 Answers
+
+Exercise 2.1
+
+	a. Both hill climbing and simulated annealing are able to solve the
+	problem. Both solutions are also able to find the correct solution.
+
+	b. Hill climbing is able to work more quickly than simulated
+	annealing. This is beacuse once hill climbing has found the neighbor
+	with the highest value, it stops running and returns the value it has
+	found. Simulated annealing will sometimes accept a neighbor with a 
+	worse value and runs based on a timer given to it.
+
+	c. In this specific problem instance, the starting value for x will
+	not matter. This is because this problem only has a global maxima,
+	which is x = 15. This means that hill climbing will always find the
+	true maxima. However, if there were multiple local maxima, the
+	starting value for x would matter for hill climbing. Simulated
+	annealing would have little to no issue with the starting x value.
+
+	*d. Changing the delta step value would make no difference on the hill
+	climbing method because it has not implemented a delta step value. 
+	However, changing the delta step value for the simulated annealing 
+	would make a difference. Specifically, it would change the
+	probability of simulated annealing accepting or rejecting the 
+	next choice.
+
+	e. The exp_schedule() method acts as a sort of timer, simulating
+	a "higher temperature." When this function is called, it will return
+	a time value. This time value will be used in simulated annealing
+	as a weight to help determine whether or not to accept the next
+	choice, if it has a lower value than the current choice. The longer
+	the timer has gone on, the less likely simulated annealing is to 
+	pick the next choice if it has a lower value. This ensures that
+	simulated annealing will not make any negative changes when the
+	timer gets closer to running out of time.
+	

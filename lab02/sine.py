@@ -35,25 +35,33 @@ class SinVariant(Problem):
 
 if __name__ == '__main__':
 
-    # Formulate a problem with a 2D hill function and a single maximum value.
+    # Formulate a problem with a 2D abs sin function and a single maximum value.
     maximum = 30
-    initial = randrange(0, maximum)
-    p = SinVariant(initial, maximum, delta=1.0)
-    print('Initial                      x: ' + str(p.initial)
-          + '\t\tvalue: ' + str(p.value(initial))
-          )
+    bestHill = 0
+    bestSim = 0
+    for x in range(0, 10):
+        initial = randrange(0, maximum)
+        p = SinVariant(initial, maximum, delta=1.0)
 
-    # Solve the problem using hill-climbing.
-    hill_solution = hill_climbing(p)
-    print('Hill-climbing solution       x: ' + str(hill_solution)
-          + '\tvalue: ' + str(p.value(hill_solution))
-          )
+        # Solve the problem using hill-climbing.
+        hill_solution = hill_climbing(p)
 
-    # Solve the problem using simulated annealing.
-    annealing_solution = simulated_annealing(
-        p,
-        exp_schedule(k=20, lam=0.005, limit=1000)
+        if p.value(bestHill) <= p.value(hill_solution):
+            bestHill = hill_solution
+
+        # Solve the problem using simulated annealing.
+        annealing_solution = simulated_annealing(
+            p,
+            exp_schedule(k=20, lam=0.005, limit=1000)
+        )
+
+        if p.value(bestSim) <= p.value(annealing_solution):
+            bestSim = annealing_solution
+
+    print('\nHill-climbing solution       x: ' + str(bestHill)
+       + '\tvalue: ' + str(p.value(bestHill))
     )
-    print('Simulated annealing solution x: ' + str(annealing_solution)
-          + '\tvalue: ' + str(p.value(annealing_solution))
-          )
+
+    print('Simulated annealing solution x: ' + str(bestSim)
+       + '\tvalue: ' + str(p.value(bestSim))
+    )

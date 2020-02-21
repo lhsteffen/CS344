@@ -23,3 +23,11 @@ algorithms, showing how hill climbing is faster than simulated annealing, but ma
 local maxima are present. This lab shows how each algorithm works by using two graphs of an absolute function and
 an absolute sin function.
 
+### Lab 03
+
+Lab 03 is about constraint satisfaction and how search algorithms using constraint satisfaction differ from
+traditional search algorithms. This lab shows the difference between the DFS, AC3, Backtracing, and Min
+Conflicts algorithms, showing their strengths and weaknesses by using the sudoku and n-Queens problems. Once
+the differences between each type of algorithm have been established, the lab then asks to consider the
+differences between constraint satisfaction and traditional search methods.
+

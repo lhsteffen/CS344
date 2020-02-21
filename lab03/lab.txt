@@ -1,0 +1,79 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 03
+21 February 2020
+
+Exercise 3.1
+
+	a. Depth first search does not work well for most sudoku problems and will often take a while to find a poor answer. This is because the depth
+	first search algorithm is a graph traversal of all possibilities. The method which dfs uses to find the solution is pick a random node and follow
+	that tree of possibilities until it reaches the bottom of the node. This takes a very long amount of time, and because dfs does not backtrace, it
+	will stop once it finds an answer, regardless of that answer's correctness. This means dfs will not work well most of the time. 
+	AC3 works quickly simple problems, but it will often fail to find an answer for more difficult problems. This is because AC3 works by removing
+	values from the domain that violate constraints. This is an issue for more difficult problems because AC3 will remove values that may have the
+	potential to conflict, but may also have the solution. This leads to AC3 removing the solution from its list, leading it to fail often for more
+	complex problems.
+	Backtracing search will work well to find a solution, but it can take a very long time to find a proper solution. This is because backtracing works
+	in a similar manner to dfs, as it will search each node in a dfs manner to find the proper solution. The difference between dfs and backtracing is
+	once backtracing finds an end node that is not the answer, it will go back to the latest branching choice it made and take a different path. This
+	will be done recursively by backtracing until it can find the proper answer. This means backtracing will find an answer, but it may take a very long
+	time to find it.
+	Min conflicts can work well for more simple sudoku problems, but it can struggle to find a proper solution for more difficult problems. This is
+	because min conflicts works by picking a number which has the minimum amount of conflicts in that spot. This algorithm will continue to place numbers
+	across any spot in the board where a number has the least amount of conflicts. If there are multiple options, min conflicts will pick one of the
+	options and continue. This part of the algorithm is where the min conflicts search will often fail. When the algorithm must choose between two or
+	more numbers, it can pick the wrong number. Because there is not backtracing, min conflicts can pick the wrong number and end up failing to find the
+	solution.
+
+	b. Setting the select_unassigned_variable equal to mrv will change the way backtracking will work to make the algorithm pick the node with the least
+	amount of conflicts first. This priority will make the search work much more efficiently because it will work through the solutions with the least
+	possible number of solutions first, making it more likely to find a solution. Forward checking will change the algorithm to look and all possible
+	next constraint options before making any moves. This in turn will reduce the overall search space greatly and allow the algorithm to find an
+	answer far more quickly. Forward checking would work best if you only needed to pick one setting. If both are selected, the algorithm is able to
+	work extremely quickly, finding the solution almost immediately. The mrv and forward_checking combination of settings works the best for the
+	algorithm.
+
+Exercise 3.2
+
+	a. For min conflicts, the value of n can get extremely large, nearing 10,000 before the algorithm has any difficulties running. This is because
+	min conficts is able to work extremely quickly wth the n-queens problem. Min conflicts will search the board for a position with the least amount
+	of conflicts, and once it has found a spot, it will place a queen there. This allows min conflicts to work quickly to find a proper solution, even
+	if it may not be the best solution for the board. While min conficts can find a local maxima instead of the global maxima, it will still find a very
+	good solution at a quick pace.
+	AC3 is not able to find a solution for any size of the board. This is because AC3 requires a large amount of constraint before it is able to run.
+	because there is are fewer constraints and a larger search size, AC3 will eliminate all of its options and proceed to fail.
+	Backtracing can get to an n value of around 50 before it begins to slow down considerably. This is because backtracing is working with a larger amount
+	of search space for each board increase. Because the search space gets considerably larger each time, it takes a lot longer for backtracing to find
+	the solution.
+
+	b. The setting combination that works the best with backtracing is mrv and forward_checking. This is because forward checking will reduce the search
+	size for backtracing by a large amount, and mrv will prioritize more constrained positions. This allows backtracing to work far more efficiently and
+	complete the problem much faster. With these settings, it takes until around n=500 before the algoithm slows down.
+
+	c. Min conficts requires about 10 * n steps to to do its work. This is because the algorithm must first place down all of the queens in each row by
+	using a greedy algorithm. Once it has finished placing all of the queens, it will take about 9 * n more steps to resolve conflicts between all of the
+	queens. Because the relationship is linear, the algorithm can work quickly for up to a large n value.
+
+Exercise 3.3
+
+	a. Both CSP problems and search problems require the establishment of an inital state and a goal state, but there are some exceptions. No matter what
+	problem, traditional search will need a goal state and initial state. However, depending on the style of problem, CSP problems may not need a goal
+	state. CSP will almost always need an initial state (start sudoku board, empty chess board, etc.) but it does not always need a goal state. One
+	example of this is the n-Queens problem. The goal of the algorithm is to place as many queens as possible, and there is no specific end state for
+	CSP to reach. Both search methods require actions to take. CSP problems will always require constraints as they a critical to the CSP process, but
+	constraints are not as important in traditonal search. Constraints can be used to make the search more efficient, but they are not always requied
+	when performing a tradtional search. The main thing that differs between CSP and traditional search is the necessity of possibilities. A CSP problem
+	will require a set of variable (spots on a sudoku board) and possibilities (numbers 1-9). Traditional search only needs states that it can be in,
+	possibilities are not needed. CSP works with domains while traditional search works with states. CSP does not have goal states, but has a goal test
+	which can vary from no conflicts found to no conflicts found while also meeting a requirement, like filling a board. Traditional search must have a
+	goal state that is definitively defined for the algorithm to work towards.
+
+	b. The largest difference between the heuristics deployed between traditional search and CSP is that traditional search works with states and actions
+	while CSP works with constraints. Traditional search will be given a list of actions and states that it can be in and told to look for the proper
+	solution by looking for the goal state through actions it can take. CSP on the other hand is given a list of constraints and possibilities and told
+	to work until it passes a goal test. This goal test is more loosely defined than a goal state. For example, the goal state for the monkeys and
+	bananas problem is very clearly defined. The monkey must not be hungry. For sudoku, CSP is told only to fill the board, not where the specific numbers
+	should be placed. While both algorithms take actions to get closer to the goal, CSP decides which actions to take based on the constraints presented
+	to it. Traditional search does not consider constraints. Rather, traditional search considers what actions it can take based on the state it is in.
+	This fundamental difference is what separates traditional search from constraint satisfaction.
+	

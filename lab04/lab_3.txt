@@ -1,0 +1,72 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 04 - Exercise 4.3
+02/29/2020
+
+a. Drug Testing
+
+	The following table is used to compute all poritons of problem a.
+
+	+----------+----------+----------+
+	|          |   User   | Non-User |
+	+----------+----------+----------+
+	| Positive |   0.99   |   0.02   |
+	+----------+----------+----------+
+	| Negative |   0.01   |   0.98   |
+	+----------+----------+----------+
+
+	Americans that are drug users of some sort = 8.9%
+
+	i. P(User) = 0.089 (given)
+
+	ii. P(test | user) = 0.99 (given a drug user, what is the probability the test will be positive)
+
+	iii. P(¬test | user) = 0.01 (given a drug user, what is the probability the test will be negative)
+
+	iv. P(test | ¬user) = 0.02 (given a non-drug user, what is the probability the test will be positive)
+
+	v. P(user | test) = P(test | user) * P(user) / P(test)
+	
+	   P(test) = P(test | user) * P(user) + P(test | non-user) * P(non-user)
+	   P(test) = 0.99 * 0.089 + 0.02 * (1 - 0.089)
+	   P(test) = 0.10633
+
+	   P(test | user) = 0.99
+	   P(user) = 0.089
+
+	   P(user | test) = 0.99 * 0.089 / 0.10633
+	   P(user | test) = 0.8286
+
+b. Breast Cancer
+
+	The following table is used to compute all poritons of problem b.
+
+	+----------+----------+----------+
+	|          |  Cancer  | No Cancer|
+	+----------+----------+----------+
+	| Positive |   0.80   |   0.096  |
+	+----------+----------+----------+
+	| Negative |   0.20   |   0.904  |
+	+----------+----------+----------+
+
+	Women at age forty that participate in routine screening that have cancer = 1%
+
+	P(Cancer | Positive) = P(Positive | Cancer) * P(Cancer) / P(Positive)
+
+	P(Positive) = P(Positive | Cancer) * P(Cancer) + P(Positive | No Cancer) * P(No Cancer)
+	P(Positive) = 0.80 * 0.01 + 0.096 * 0.99
+	P(Positive) = 0.10304
+
+	P(Positive | Cancer) = 0.80
+	P(Cancer) = 0.01
+
+	P(Cancer | Positive) = 0.80 * 0.01 / 0.10304
+	P(Cancer | Positive) = 0.07764 = 7.764%
+
+
+
+
+
+
+
+

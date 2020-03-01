@@ -31,3 +31,20 @@ Conflicts algorithms, showing their strengths and weaknesses by using the sudoku
 the differences between each type of algorithm have been established, the lab then asks to consider the
 differences between constraint satisfaction and traditional search methods.
 
+### Lab 04
+
+Lab 04 is about joint probability systems and Bayes' Rule. This lab shows how artificial intelligence can use
+statistics to determine things by thinking logically. This lab fist shows how a joint probability system would
+work, showing the issues that come with joint probability tables and how unweildy they can become. The lab then
+moves on to Bayes' Rule with some hand calculated probabilities. This part of the lab shows that you can calculate
+probabilities with less information given by using Bayes' Rule. This part of the lab also shows some statistical
+"paradoxes" regarding drug tests and cancer tests.
+
+### Homework 01
+
+Homework 01 revists the local search and CSP algorithms discussed in labs 01-03. This homework fist asks a more
+philosophical question about introspection and human cognitive modelling. After this question, homework asks you
+to create and formulate the Travelling Salesman Problem for the local search algorithms hill climbing and simulated
+annealing to solve. Once a solution to this problem has been formulated, the homework asks you to create a scheduling
+problem for constraint satisfaction search algorithms to solve.
+

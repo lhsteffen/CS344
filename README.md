@@ -2,8 +2,11 @@
 
 This repository is a collection of labs, homework, and other resources
 associated with the Calvin University course CS-344: Artificial Intelligence.
+All submissions in this repository assume that both the AIMA and PAIP tool libraries are already installed on the
+user's own machine. Both of these repositories were provided as course material and contain all artificial
+intelligence algorithms needed to complete the labs and homework.
 
-This repository was created by Luke Steffen on Febuary 2, 2020.
+This repository was created by Luke Steffen (lhs3) on Febuary 2, 2020.
 
 ## Description of Labs and Homework
 
@@ -39,6 +42,17 @@ work, showing the issues that come with joint probability tables and how unweild
 moves on to Bayes' Rule with some hand calculated probabilities. This part of the lab shows that you can calculate
 probabilities with less information given by using Bayes' Rule. This part of the lab also shows some statistical
 "paradoxes" regarding drug tests and cancer tests.
+
+### Lab 05
+
+Lab 05 is about Bayesian Networks and determining probabilities from them using less space than full joint distribution
+tables. The first portion of the lab uses a Burlary/Earthquake Bayesian Network and demonstrates how the syntax is used
+to get results. The second part of the lab asks to set up a new Bayesian Network using Cancer and two tests that predict
+cancer. The lab then asks to calculate a few probabilities by hand and by using the code set up. The lab then asks for
+an explanation as to why the probabilities seem unexpected. The third part of the lab asks to create another new Bayesian
+Network and compute some probabilities in it both by hand and through the code provided. The lab again asks why some of
+the probabilities may seem unexpected. The lab closes by returning to the first portion of the lab and examining the
+different types of functions used to find probabilities, asking why the they give different results.
 
 ### Homework 01
 

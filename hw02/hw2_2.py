@@ -16,7 +16,7 @@ cloudy = BayesNet([
     ('Cloudy', '', 0.5),
     ('Sprinkler', 'Cloudy', {T: 0.1, F: 0.5}),
     ('Rain', 'Cloudy', {T: 0.8, F: 0.2}),
-    ('WetGrass', 'Rain Cloudy', {(T, T): 0.99, (T, F): 0.9, (F, T): 0.9, (F, F): 0.0})
+    ('WetGrass', 'Rain Sprinkler', {(T, T): 0.99, (T, F): 0.9, (F, T): 0.9, (F, F): 0.0})
 ])
 
 # Compute P(Cloudy)
@@ -58,4 +58,60 @@ d. P(Cloudy) = <0.5, 0.5> (Given)
    have an effect. This is because Cloudy and WetGrass are independent.
    
    P(Cloudy | Not WetGrass)
+   This portion shows a visual representation of the binary tree used to solve this
+   problem. The tree is split into two subsections, the probability of it being cloudy
+   and the probability of it not being cloudy. The numbers are multiplied down to each
+   leaf, then summed to find the total probability.
+   
+
+                                                  P(C)
+                                ___________________|______________________
+                               /                                          \
+                              /                                            \
+                             /                                              \
+                            /                                                \
+                           /                                                  \
+                    P(S | C) = 0.1                                    P(¬S | C) = 0.9
+                   /             \                                   /                \
+                  /               \                                 /                  \
+                 /                 \                               /                    \
+                /                   \                             /                      \
+               /                     \                           /                        \
+              /                       \                         /                          \
+      P(R | S, C) = 0.8        P(¬R | S, C) = 0.2        P(R | ¬S, C) = 0.8        P(¬R | ¬S, C) = 0.2
+             |                        |                         |                          |
+             |                        |                         |                          |
+   P(¬W | R, S, C) = 0.01    P(¬W | ¬R, S, C) = 0.1    P(¬W | R, ¬S, C) = 0.1    P(¬W | ¬R, ¬S, C) = 1.0
+   
+   
+   P(C) = (0.1 * 0.8 * 0.01) + (0.1 * 0.2 * 0.1) + (0.9 * 0.8 * 0.1) + (0.9 * 0.2 * 1.0) = 0.2548 * alpha
+   
+   
+                                                P(¬C)
+                                ___________________|______________________
+                               /                                          \
+                              /                                            \
+                             /                                              \
+                            /                                                \
+                           /                                                  \
+                    P(S | ¬C) = 0.5                                   P(¬S | ¬C) = 0.5
+                   /             \                                   /                \
+                  /               \                                 /                  \
+                 /                 \                               /                    \
+                /                   \                             /                      \
+               /                     \                           /                        \
+              /                       \                         /                          \
+      P(R | S, ¬C) = 0.2       P(¬R | S, ¬C) = 0.8        P(R | ¬S, ¬C) = 0.2        P(¬R | ¬S, ¬C) = 0.8
+             |                        |                         |                          |
+             |                        |                         |                          |
+   P(¬W | R, S, ¬C) = 0.01   P(¬W | ¬R, S, ¬C) = 0.1    P(¬W | R, ¬S, ¬C) = 0.1    P(¬W | ¬R, ¬S, ¬C) = 1.0
+   
+   
+   P(¬C) = (0.5 * 0.2 * 0.01) + (0.5 * 0.8 * 0.1) + (0.5 * 0.2 * 0.1) + (0.5 * 0.8 * 1.0) = 0.451 * alpha
+   
+   P(Cloudy | ¬WetGrass) = alpha <0.2548, 0.451>
+   
+   alpha = 1 / (0.2548 + 0.451) = 1.4168
+   
+   P(Cloudy | ¬WetGrass) = <0.361, 0.639>
 '''

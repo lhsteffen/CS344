@@ -62,3 +62,11 @@ to create and formulate the Travelling Salesman Problem for the local search alg
 annealing to solve. Once a solution to this problem has been formulated, the homework asks you to create a scheduling
 problem for constraint satisfaction search algorithms to solve.
 
+### Homework 02
+
+Homework 02 looks at Bayesian Networks and statistical approaches to AI. The first portion of the homework asks to
+implement an email spam filter by using word probabilities. After the code has been created, the homeworks asks what
+makes this approach a Bayesian approach. The second portion of the homework covers similar things done in Lab 05. The
+homework gives a Bayesian Network example and asks to implement this network into code. Once this has been done, the
+homework asks to solve some probabilities associated with the Bayesian Network by hand and by code.
+

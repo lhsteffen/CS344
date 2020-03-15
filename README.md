@@ -54,6 +54,15 @@ Network and compute some probabilities in it both by hand and through the code p
 the probabilities may seem unexpected. The lab closes by returning to the first portion of the lab and examining the
 different types of functions used to find probabilities, asking why the they give different results.
 
+### Lab 06
+
+Lab 06 is an introduction to Machine Learning Artificial Intelligence. The first portion of the lab is about how Machine
+Learning works and asks to solve for the information gain of the aspect "Hungry" in the restaurant dataset. Once the 
+information gain has been solved, the lab asks if this aspect is better than the previous examples shown (Partrons, Type).
+Next, the lab asks to record the answers given to a Google page about framing and formulating a machine learning problem.
+The final portion of the lab asks the user to load the keras and numpy libraries to print out some basic information
+about the boston_housing dataset.
+
 ### Homework 01
 
 Homework 01 revists the local search and CSP algorithms discussed in labs 01-03. This homework fist asks a more

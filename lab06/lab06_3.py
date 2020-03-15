@@ -10,6 +10,7 @@ import numpy as np
 from keras.datasets import boston_housing
 (train_images, train_labels), (test_images, test_labels) = boston_housing.load_data()
 
+# Print statement pulled from numpy.ipynb
 print(
         'training images \
             \n\tcount: {} \

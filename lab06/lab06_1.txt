@@ -1,0 +1,29 @@
+Luke Steffen
+CS-344: Artificial Intelligence
+Lab06 - Machine Learning
+
+Exercise 6.1
+
+	Information Gain = Gain(A) = B(p/(p+n)) - Remainder(A)
+	
+	B(p/(p+n)) = 6 / 12 = 0.5 -> 1 bit
+	
+	Remainder(A) = Sum[(pk + nk)/(p+n) * B(pk/(pk + nk))]
+	
+	Hungry -> 2 choices for attribute (yes & no)
+	yes -> 7 occurances
+	no -> 5 occurances
+	
+	yes -> 5 positive occurances & 2 negative occurances
+	no -> 1 positive occurance & 4 negative occurances
+	
+	Gain(Hungry) = 1 - [(5+2)/(6+6) * 5/(5+2) + (1+4)/(6+6) * 1/(1+4)]
+	Gain(Hungry) = 0.5 bits
+	
+	While this question would be better than most of the other attributes, it would
+	not be better than the Patrons attribute. This is because we are looking for the
+	attribute with the highest information gain to initially split our decision tree.
+	While Hungry has an information gain of 0.5 bits, Patrons has an information gain
+	of 0.541 bits (calculated in the book, pg. 723). Because Patrons is higher than
+	Hungry, it is a better option for the initial split in the decision tree.
+	

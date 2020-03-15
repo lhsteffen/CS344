@@ -1,0 +1,64 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab06 - Machine Learning
+
+Exercise 6.2
+
+	Exercise 1: Start Clearly and Simply
+		I want the machine learning model to match a person to an image of their iris.
+		
+	Exercise 2: Your Ideal Outcome
+		My ideal outcome is to increase the security of a system by implementing an
+		authentication system that uses a person's iris as their password.
+		
+	Exercise 3: Your Success Metrics
+		My success metrics are the number of iris images correctly matched to the
+		corresponding person.
+		
+		My key results for the success metrics are correctly identifying 50% or more
+		of the iris images, thus making the recoginition system viable to use, 
+		meaning a good final project score.
+		
+		My ML model is deemed a failure if less than 50% of iris images are not
+		identified properly.
+		
+	Exercise 4: Your Output
+		The output from my ML model will be a person/user.
+		
+		The output is defined as a string that identifies the person, authenticating them
+		
+	Exercise 5: Using the Output
+		The output from the ML model will be made when a person moves their eye up to
+		a camera and a picture is taken.
+		
+		The outcome will be used for authentication to open a lock.
+		
+	Exercise 6: Your Heuristics
+		If I didn't use ML, I would attempt to match a new picture to a large database
+		of previous pictures. This would not be a very accurate method
+		
+	Exercise 7a: Your Problem, Formulated as an ML Problem
+		Multi-class single-label classification which predicts whether an image belongs
+		to a user in the known users database.
+		
+	Exercise 7b: Cast Your Problem as a Simpler Problem
+		Is the given image a user, true if so, false if not.
+		
+	Exercise 8: Design Your Data for the Model
+	
+	+-----------------------------+--------------------+
+	|	Iris Picture (input 1)    |    Output (user)   |
+	+-----------------------------+--------------------+
+	|  <Iris Image 1>             |    User 1          |
+	+-----------------------------+--------------------+
+	|  <Iris Image 2>             |    Admin 1         |
+	+-----------------------------+--------------------+
+	
+	Exercise 9: Where the Data Comes From
+		Iris Picture: Comes from an image taken by a camera waiting for someone
+			Example data comes from taking multiple images of an iris and assigning
+			each picture a user.
+			
+	Exercise 10: Easily Obtained Inputs
+		Iris Picture (only input data needed)
+	

@@ -63,6 +63,18 @@ Next, the lab asks to record the answers given to a Google page about framing an
 The final portion of the lab asks the user to load the keras and numpy libraries to print out some basic information
 about the boston_housing dataset.
 
+### Lab 07
+
+Lab 07 is an introduction to the Pandas, NumPy, and TensorFlow libraries along with a small tutorial of how to manipulate
+data and train models. The first portion of the lab discusses how to create a Pandas dataframe and various ways of chaning
+and manipulating the data. The second portion of the lab discusses how to build, train, and examine a model by giving it
+input data. The final portion of the lab discuesses how to create and train a model using a synthetic feature. All of these
+tutorials were Google hosted Jupyter Notebooks that can be found at the following links.
+
+* Intro to Pandas: [https://colab.research.google.com/notebooks/mlcc/intro_to_pandas.ipynb]
+* First Steps with TensorFlow: [https://colab.research.google.com/notebooks/mlcc/first_steps_with_tensor_flow.ipynb]
+* Synthetic Features: [https://colab.research.google.com/notebooks/mlcc/synthetic_features_and_outliers.ipynb]
+
 ### Homework 01
 
 Homework 01 revists the local search and CSP algorithms discussed in labs 01-03. This homework fist asks a more

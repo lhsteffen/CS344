@@ -1,0 +1,33 @@
+Luke Steffen
+CS-344: Artificial Intelligence
+Lab 07
+March 29, 2020
+
+Exercise 7.2:
+
+	a. Categorical data is non-numeric data, meaning the data is categorized by strings. Categorical data is textual based data. Numeric data is data that is number based.
+
+	b. Task 1 Solution:
+	
+		train_model(
+			learning_rate=0.00002,
+			steps=640,
+			batch_size=5
+		)
+
+		Final RMSE (period 09): 166.31
+
+	   Task 2 Solution:
+
+		train_model(
+			learning_rate=0.00002
+			steps=1060
+			batch_size=5,
+			input_feature="population"
+		)
+
+		Final RMSE (period 09): 175.92
+
+	c. The hyperparameters learned in this exercise were the learning rate, steps taken, and batch size. There is not standard tuning algorithm to optimize these, but there
+	   are a few rules of thumb one can follow. These rules are training error should decrease, increasing the learning rate will make training error decrease faster, if the
+	   training error is sporadic, decrase the learning rate, try large batch sizes and decrease until you see degredation, and run training longer if it has not converged.

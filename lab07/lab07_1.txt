@@ -1,0 +1,24 @@
+Luke Steffen
+CS-344: Artificial Intelligence
+Lab 07
+March 29, 2020
+
+Exercise 7.1:
+	
+	a. Solutions to exercises 1 & 2
+
+		Exercise 1
+
+		cities['Large area and saint name'] = (cities['Area square miles'] > 50) & cities['City name'].apply(lambda name: name.startswith('San'))
+		cities
+
+		Exercise 2
+
+		cities.reindex([7, 3, 1, 4, 2])
+
+	b. One would use Pandas rather than standard data manipulation techniques in NumPy because Pandas provides a more flushed out, comprehensive library for data manipulation.
+	   It is easier to set up a dataframe and manipulate data with Pandas than NumPy, meaning it is a better option to use.
+
+	c. You would want to shuffle your data when training a neural network or other machine learning algorithm. This is because when you shuffle the data, you are effectively 
+	   representing the distribution of the data. Shuffling data also provides less variance, making the model more general and accurate. In terms of specific mathematics,
+	   shuffling data reduces the chance the training model gets stuck in a local minima, making the model more accurate.

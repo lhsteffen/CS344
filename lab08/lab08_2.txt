@@ -1,0 +1,84 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 08
+April 4, 2020
+
+Exercise 8.2:
+
+	a. Pearson's Correlation Coefficient measures the relation between two variables. The coefficient, r, ranges from -1 to 1. A value of -1 means there is a perfectly negative
+	correlation, a value of 1 means there is a perfectly positive coefficient, and a value of 0 means there is no correlation. Correlation is defined as relationship between two
+	variables. For example, if r = -1, as variable X increases, variable Y decreases. An example value of positive correlation is the correlation between total rooms and total
+	bedrooms. The correlation between total rooms and total bedrooms is 0.9. This value is a very strong positive correlation that states that as the number of total rooms goes up,
+	the number to total bedrooms goes up. This correlation makes sense because it naturally makes sense that a larger house with more rooms would have more bedrooms than a smaller
+	house with less rooms.
+	
+	b. 
+	Solution for Task 1:
+	
+		#
+		# Your code here: add your features of choice as a list of quoted strings.
+		#
+		minimal_features = [
+                    "total_rooms",
+                    "population"
+		]
+
+		assert minimal_features, "You must select at least one feature!"
+
+		minimal_training_examples = training_examples[minimal_features]
+		minimal_validation_examples = validation_examples[minimal_features]
+
+		#
+		# Don't forget to adjust these parameters.
+		#
+		train_model(
+			learning_rate=0.0001,
+			steps=100,
+			batch_size=5,
+			training_examples=minimal_training_examples,
+			training_targets=training_targets,
+			validation_examples=minimal_validation_examples,
+			validation_targets=validation_targets)
+			
+		Final RMSE value: 167.71
+		
+		I was not able to beat Google's baseline RMSE.
+		
+	Solution for Task 2:
+	
+		Synthesized feature used: distance from San Francisco
+	
+		#
+		# YOUR CODE HERE: Train on a new data set that includes synthetic features based on latitude.
+		#
+		def select_and_transform_features(source_df):
+		selected_examples = pd.DataFrame()
+		selected_examples["median_income"] = source_df["median_income"]
+		selected_examples["distance_from_san_francisco"] = source_df["latitude"].apply(lambda l: abs(l - 38))
+		return selected_examples
+
+		selected_training_examples = select_and_transform_features(training_examples)
+		selected_validation_examples = select_and_transform_features(validation_examples)
+
+		_ = train_model(
+			learning_rate=0.1,
+			steps=300,
+			batch_size=5,
+			training_examples=selected_training_examples,
+			training_targets=training_targets,
+			validation_examples=selected_validation_examples,
+			validation_targets=validation_targets)
+			
+		Final RMSE value: 84.48
+		
+		This final RMSE did beat Google's RMSE in their first example.
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 08
+April 4, 2020
+
+Exercise 8.1:
+	
+	a. Tasks 1-5
+	Solution to Task 1:
+		The median_income values appear to be unmeasured, or logged at some scale that is not apparent or stated. The rooms_per_person data also seems to be slightly corrupted
+		as the max value is very large. The max median_house_value also appears to be a cap as there are no other values above 500.0.
+		
+	Solution to Task 2:
+		The distribution of longitude is drastically different between the training data and the target data. Because the training data has a higher. Since the distributions of
+		the data are different, the resulting graphs look different.
+		
+	Solution to Task 3:
+		There a two lines of code that are commented out that would randomize the data. Since randomizing data is important for both training and target data, the data randomization
+		fixes the issue. The line of code uncommented is as follows:
+		
+		california_housing_dataframe = california_housing_dataframe.reindex(np.random.permutation(california_housing_dataframe.index))
+		
+	Solution to Task 4:
+		Code added to the train_model_function:
+			
+			training_input_fn = lambda: my_input_fn(training_examples, training_targets["median_house_value"], batch_size=batch_size)
+			predict_training_input_fn = lambda: my_input_fn(training_examples, training_targets["median_house_value"], num_epochs=1, shuffle=False)
+			predict_validation_input_fn = lambda: my_input_fn(validation_examples, validation_targets["median_house_value"], num_epochs=1, shuffle=False)
+			...
+			training_predictions = linear_regressor.predict(input_fn=predict_training_input_fn)
+			training_predictions = np.array([item['predictions'][0] for item in training_predictions])
+    
+			validation_predictions = linear_regressor.predict(input_fn=predict_validation_input_fn)
+			validation_predictions = np.array([item['predictions'][0] for item in validation_predictions])
+			
+		Values used to get low RMSE:
+		
+			linear_regressor = train_model(
+				# TWEAK THESE VALUES TO SEE HOW MUCH YOU CAN IMPROVE THE RMSE
+				learning_rate=0.0001,
+				steps=100,
+				batch_size=1,
+				training_examples=training_examples,
+				training_targets=training_targets,
+				validation_examples=validation_examples,
+				validation_targets=validation_targets)
+				
+	Solution to Task 5:
+	
+		The RMSE of the test performance and validation performance are close, but not equal. The final RMSE of my test performance was 166.28 while the RMSE of the validation
+		performance is 160.28. While these numbers are close, they are not exact. In order to fix this, the number of steps taken should be adjusted.
+		
+		Code to calculate RMSE of validation performance:
+		
+			california_housing_test_data = pd.read_csv("https://download.mlcc.google.com/mledu-datasets/california_housing_test.csv", sep=",")
+
+			test_examples = preprocess_features(california_housing_test_data)
+			test_targets = preprocess_targets(california_housing_test_data)
+
+			predict_test_input_fn = lambda: my_input_fn(
+				test_examples, 
+				test_targets["median_house_value"], 
+				num_epochs=1, 
+				shuffle=False)
+
+			test_predictions = linear_regressor.predict(input_fn=predict_test_input_fn)
+			test_predictions = np.array([item['predictions'][0] for item in test_predictions])
+
+			root_mean_squared_error = math.sqrt(
+				metrics.mean_squared_error(test_predictions, test_targets))
+
+			print("Final RMSE (on test data): %0.2f" % root_mean_squared_error)
+			
+	b. I learned a few things about training, validation, and testing from this exercise. The first thing I learned about training is that there are multiple ways to pass the
+	training data incorrectly. It is critical to double check your data to make sure it is accurate before passing it to a model. Another thing I learned about training a model
+	is that input functions can be changed to change the way a model is trained. When it comes to testing a model, the best way to determine accuracy is to compare the RMSE values
+	that the trained model gives and the value calculated from the validation performance. 
+
+
+
+
+
+
+
+

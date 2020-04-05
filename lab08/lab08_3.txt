@@ -1,0 +1,62 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 08
+April 4, 2020
+
+Exercise 8.3:
+
+	a. FTRL is managing the learning rate, as far as I can tell, by adjusting the learning rate to match each unique run. I believe this adjustment is done based on the gradient
+	of the data ahead of the run. For example, if the data ahead has an RMSE that is sharply declining, FTRL will adjust the learning rate for the current run to a larger learning
+	rate, but if the data ahead has a slowly declining RMSE, FTRL will adjust the learning rate to a lower value. At the beginning of each run, FTRL is given a base value of 1.0,
+	and it will adjust the value to uniquely fit the current run. Ideally, this would work very well for training models, but the current example seems to end on a value that is
+	not the minimum value it traveresed.
+	
+	b. Bucketing/binning is able to reduce observation errors. It is also a good way to categorize data which makes it easier to analyze the data since there is only a few
+	different categories instead of a large amount of values.
+	
+	c.
+	Solution for Task 1:
+	
+		Code within the construct_feature_column function
+	
+		#
+		# YOUR CODE HERE: bucketize the following columns, following the example above:
+		#
+		bucketized_latitude = tf.feature_column.bucketized_column(
+			latitude, boundaries=get_quantile_based_boundaries(
+			training_examples["latitude"], 10))
+  
+		bucketized_housing_median_age = tf.feature_column.bucketized_column(
+			housing_median_age, boundaries=get_quantile_based_boundaries(
+			training_examples["housing_median_age"], 7))
+  
+		bucketized_median_income = tf.feature_column.bucketized_column(
+			median_income, boundaries=get_quantile_based_boundaries(
+			training_examples["median_income"], 7))
+  
+		bucketized_rooms_per_person = tf.feature_column.bucketized_column(
+			rooms_per_person, boundaries=get_quantile_based_boundaries(
+			training_examples["rooms_per_person"], 7))
+			
+		The way Google has bucketed their features makes sense to me. They have created buckets in such a way that the size of these buckets are relatively even. However, I do 
+		think that there might be a better bucketing methodology for these categories since this methodology is mostly arbitrary.
+		
+	Solution for Task 2:
+	
+		Code within the construct_feature_column function
+		
+		# YOUR CODE HERE: Make a feature column for the long_x_lat feature cross
+		long_x_lat = tf.feature_column.crossed_column(set([bucketized_longitude, bucketized_latitude]), hash_bucket_size=1000) 
+		
+		One unique feature cross that could be useful is the cross of median_income and longitude. This cross could be useful because it could help identify areas that have higher
+		median_income. This relation can help when looking at the median_house_cost, rooms_per_person, and other features that can be based on wealth.
+	
+	
+
+
+
+
+
+
+
+

@@ -75,6 +75,20 @@ tutorials were Google hosted Jupyter Notebooks that can be found at the followin
 * First Steps with TensorFlow: [https://colab.research.google.com/notebooks/mlcc/first_steps_with_tensor_flow.ipynb]
 * Synthetic Features: [https://colab.research.google.com/notebooks/mlcc/synthetic_features_and_outliers.ipynb]
 
+### Lab 08
+
+Lab 08 looks at both the TensorFlow and Keras libraries and how to train a model to show how to validate models, create
+synthetic features, create feature crosses, and work with the Keras library. This lab is a continuation from Lab 07. The
+first portion of the lab is a tutorial of how to validate a training model by using validation data. The second portion of
+the lab examines how to create and use synthetic features to improve a model's training. The third portion of the lab is a
+tutorial of how to create a cross feature for further accuracy in model traininig. The fourth portion of the lab examines
+how to use the Keras library to train a model. All of these tutorial can be found at the following links.
+
+* Validation: [https://colab.research.google.com/notebooks/mlcc/validation.ipynb]
+* Feature Engineering: [https://colab.research.google.com/notebooks/mlcc/feature_sets.ipynb]
+* Feature Crosses: [https://colab.research.google.com/notebooks/mlcc/feature_crosses.ipynb]
+* Keras: [https://github.com/fchollet/deep-learning-with-python-notebooks/blob/master/3.7-predicting-house-prices.ipynb]
+
 ### Homework 01
 
 Homework 01 revists the local search and CSP algorithms discussed in labs 01-03. This homework fist asks a more

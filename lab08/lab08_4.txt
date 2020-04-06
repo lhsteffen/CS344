@@ -1,0 +1,33 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 08
+April 5, 2020
+
+Exercise 8.4:
+
+	a. K-fold helped reduce the variation within the validation set, which in turn
+	makes training the model more accurate. K-folding is done by splitting available
+	data into K partitions, then creating K identical models, then training each one
+	on K-1 partitions while doing evaluation on the final partition. The validation
+	score for the model used would then be the average of the K validation scores
+	obtained.
+
+	b. It would be problematic to use data with widly different ranges because the
+	validation scores can change drastically depending on which data points are
+	chosen from the dataset. As a result, this high variance would prevent one from
+	reliably evaluating their model.
+
+	c. I do agree with Chollet's claim. A smaller dataset prefers a smaller network
+	because a larger network would overfit the dataset. When a larger network with
+	more hidden layers is used, the model's mean absolute error will improve up to
+	a certain point, but since the network is larger, the model will tend to overfit
+	the data, resulting in a significantly worse mean absolute error once the model
+	is trained. In order to avoid this, it is best for one to make the network
+	smaller. 
+
+	d. None of the alternatives work better than the suggested architecture. This is
+	because whenever the network is widdened or given another hidden layer, the model
+	begins to overfit the data, making the mean absolute error worse than the
+	suggested model before. If the model is narrowed or a hidden layer is taken away,
+	the model does not have enough layers to fully evaluate the data, making the mean
+	absolute error worse than the suggested model before.

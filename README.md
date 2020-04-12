@@ -105,3 +105,12 @@ makes this approach a Bayesian approach. The second portion of the homework cove
 homework gives a Bayesian Network example and asks to implement this network into code. Once this has been done, the
 homework asks to solve some probabilities associated with the Bayesian Network by hand and by code.
 
+### Homework 03
+
+Homework 03 looks at the past material relating to machine learning and covers the main points from machine learning, 
+deep learning, and keras. The first portion of the homework is about information gain and looks at the restaurant 
+example data. The homework asks for the information gain from the price feature. The next portion of the homework is
+about the need for deep networks to solve nonlinear problems, asking why an XOR problem must be solved with a network
+of at least two layers. The final portion of the homework covers how pandas, numpy, and keras work together to prepare
+a model. The homework asks to load a dataset and create the code for training, testing, and validation data.
+

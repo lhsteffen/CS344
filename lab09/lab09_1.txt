@@ -1,0 +1,31 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 09
+April 4, 2020
+
+Exercise 9.1:
+
+	a. The linear regression approach to this problem is not the most effective method for this type of problem.
+	The linear regression method does not penalize false classifications strong enough when output is interpreted
+	as a probability. This results in a model that is not very accurate with probabilities.
+	
+	b. L2 loss, which is used by linear regression, does not penalize misclassifications strongly, making the model
+	adjust far more slowly than LogLoss. L2 does not strongly differentiate probabilities, and works better for models
+	that are not evaluating probabilities. LogLoss, however, strongly differentiates probabilities and will penalize
+	these confidence errors strongly. This in turn will lead to a model that is far more accurate with probabilities.
+	
+	c. Logistic regression is far more accurate than linear regression when predicting the probabilities. When
+	training using linear regression, the model's RMSE tends to fluctute frequently, and the training RMSE remains
+	quite far away from the validation RMSE. The logistic regression, however, becomes accurate far more quikcly, and
+	the distance between the training RMSE and validation RMSE is quickly reduced. When properly trained, the logistic
+	regression model fits the probabilities far better than linear regression.
+	
+	d. 
+	linear_classifier = train_linear_classifier_model(
+		learning_rate=0.000003,
+		steps=20050,
+		batch_size=500,
+		training_examples=training_examples,
+		training_targets=training_targets,
+		validation_examples=validation_examples,
+		validation_targets=validation_targets)

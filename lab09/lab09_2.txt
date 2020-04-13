@@ -1,0 +1,29 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 09
+April 4, 2020
+
+Exercise 9.2:
+
+	a. We are regularizing with relation to sparsity because this method reduces the
+	complexity of the model's network. A less complex model will result in a smaller
+	model size, which is beneficial for embedded systems or systems with little memory.
+	
+	b. L1 regularization increases sparsity by encouraging weigths within the network to
+	be exactly 0. A 0 weight is the same as not using the feature at all, which in turn
+	reduces overfitting and increases efficiency.
+	
+	c. The best LogLoss value I got was 0.25 with a gamma value of 0.9. The model is shown
+	below.
+	
+	linear_classifier = train_linear_classifier_model(
+		learning_rate=0.1,
+		# TWEAK THE REGULARIZATION VALUE BELOW
+		regularization_strength=0.9,
+		steps=300,
+		batch_size=100,
+		feature_columns=construct_feature_columns(),
+		training_examples=training_examples,
+		training_targets=training_targets,
+		validation_examples=validation_examples,
+		validation_targets=validation_targets)

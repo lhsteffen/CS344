@@ -82,12 +82,24 @@ synthetic features, create feature crosses, and work with the Keras library. Thi
 first portion of the lab is a tutorial of how to validate a training model by using validation data. The second portion of
 the lab examines how to create and use synthetic features to improve a model's training. The third portion of the lab is a
 tutorial of how to create a cross feature for further accuracy in model traininig. The fourth portion of the lab examines
-how to use the Keras library to train a model. All of these tutorial can be found at the following links.
+how to use the Keras library to train a model. All of these tutorials can be found at the following links.
 
 * Validation: [https://colab.research.google.com/notebooks/mlcc/validation.ipynb]
 * Feature Engineering: [https://colab.research.google.com/notebooks/mlcc/feature_sets.ipynb]
 * Feature Crosses: [https://colab.research.google.com/notebooks/mlcc/feature_crosses.ipynb]
 * Keras: [https://github.com/fchollet/deep-learning-with-python-notebooks/blob/master/3.7-predicting-house-prices.ipynb]
+
+### Lab 09
+
+Lab 09 looks at a different approach to model training, logistical regression. The lab goes through a few Google examples
+where TensorFlow is used to create a logistical regression model to evaluate probabilities. The first part of the lab
+covers how to create a logistical regression model. The second part of the lab covers sparsity and how it can benefit
+devices that have smaller memory space, like embedded systems. The final part of the lab covers how to create a logistical
+model in keras. All of these tutorials can be found at the following links.
+
+* Logistical Regression: [https://colab.research.google.com/notebooks/mlcc/logistic_regression.ipynb]
+* Sparsity: [https://colab.research.google.com/notebooks/mlcc/sparsity_and_l1_regularization.ipynb]
+* Keras: [https://github.com/fchollet/deep-learning-with-python-notebooks/blob/master/3.5-classifying-movie-reviews.ipynb]
 
 ### Homework 01
 

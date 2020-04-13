@@ -1,0 +1,13 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 09
+April 13, 2020
+
+Exercise 9.3:
+
+	a. None of the alternatives do better than the suggested architecture. This is because of the following reasons. For the number of hidden
+	layers, removing layers would result in oversimplifying the network to the point where it could no longer solve linear problems. Adding
+	hidden layers would overcomplicate the network. This idea also applies to the number of units used. Because the data is converted to
+	probability format using a sigmoid function, the binary_crossentropy is a better fit for probability data compared to mse. For the final
+	alternative, the tanh feature is a non-binary function which has a range from (-1, 1). Because sigmoid returns positive probabilities, it
+	is better to avoid negative values, which makes relu a better option.

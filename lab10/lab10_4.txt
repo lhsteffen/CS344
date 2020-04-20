@@ -1,0 +1,25 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 10
+April 19, 2020
+
+Exercise 10.4:
+
+	a.
+		i. Cats dataset
+			Shape: (150, 150, 3) 
+			Size: 1000
+		   Dogs dataset
+			Shape: (150, 150, 3)
+			Size: 1000
+			
+		ii. This network is very similar to the network shown in class in regards to the convolution portion of the network. Both
+		networks have three rounds of 2D convolution and max pooling, reducing the size of the network. However, the dense
+		interconnected part of the network differs between the class example and Google example. The class example contained three
+		layers of densely connected layers, inlcuding the output layer. The Google example, however, only contains two layers,
+		including the output layer.
+		
+		iii. One pattern that I noticed in the intermediate visualization was that the algorithm seemed to highlight points of
+		interest using yellow pixels. For example, an image of a cat will be changed mostly to shades of green. Important parts
+		of the cat, like its face, ears, and paws are marked with yellow pixels. This seems to be some sort of way to categorize
+		cats. The Google document mentions that this is part of the network's sparsity method.

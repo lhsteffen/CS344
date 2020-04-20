@@ -1,0 +1,47 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 10
+April 19, 2020
+
+Exercise 10.1:
+
+	a. I would rather use Keras than TensorFlow for building a neural network. This is because Keras' training,
+	functions, and prediction seem to take a lot less lines of code compared to TensorFlow. Keras only takes a
+	few lines to train and predict after the data has been prepared. TensorFlow seems to have more functionality
+	and minute settings than Keras, but it takes a lot more lines of code and a greater understanding of neural
+	networks. Keras seems to be a better library to use for beginners in neural networks, which is why I would
+	rather use it.
+	
+	b. Solution to Task 1:
+	
+		dnn_regressor = train_nn_regression_model(
+			learning_rate=0.001,
+			steps=5000,
+			batch_size=100,
+			hidden_units=[10, 7],
+			training_examples=training_examples,
+			training_targets=training_targets,
+			validation_examples=validation_examples,
+			validation_targets=validation_targets)
+			
+		Final RMSE value (period 9): 102.29
+		
+		Solution to Task 2:
+		
+		test_examples = preprocess_features(california_housing_test_data)
+		test_targets = preprocess_targets(california_housing_test_data)
+
+		predict_testing_input_fn = lambda: my_input_fn(test_examples, 
+											   test_targets["median_house_value"], 
+                                               num_epochs=1, 
+                                               shuffle=False)
+
+		test_predictions = dnn_regressor.predict(input_fn=predict_testing_input_fn)
+		test_predictions = np.array([item['predictions'][0] for item in test_predictions])
+
+		root_mean_squared_error = math.sqrt(
+			metrics.mean_squared_error(test_predictions, test_targets))
+
+		print("Final RMSE (on test data): %0.2f" % root_mean_squared_error)
+		
+		Final RMSE value: 100.73

@@ -1,0 +1,69 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 10
+April 19, 2020
+
+Exercise 10.2:
+
+	a. AdaGrad modifies the learning rate adaptively for each coefficient in a model. This works very well for convex problems.
+	
+	b. Solution for Task 1:
+	
+		_ = train_nn_regression_model(
+			my_optimizer=tf.train.GradientDescentOptimizer(learning_rate=0.005),
+			steps=2000,
+			batch_size=50,
+			hidden_units=[10, 10],
+			training_examples=normalized_training_examples,
+			training_targets=training_targets,
+			validation_examples=normalized_validation_examples,
+			validation_targets=validation_targets)
+			
+	Solution for Task 2:
+	
+		AdaGrad Solution:
+			
+			_, adagrad_training_losses, adagrad_validation_losses = train_nn_regression_model(
+				my_optimizer=tf.train.AdagradOptimizer(learning_rate=0.05),
+				steps=1000,
+				batch_size=100,
+				hidden_units=[10, 10],
+				training_examples=normalized_training_examples,
+				training_targets=training_targets,
+				validation_examples=normalized_validation_examples,
+				validation_targets=validation_targets)
+				
+			Final RMSE (period 09): 70.67
+				
+		Adam Solution:
+		
+			_, adam_training_losses, adam_validation_losses = train_nn_regression_model(
+				my_optimizer=tf.train.AdamOptimizer(learning_rate=0.009),
+				steps=500,
+				batch_size=100,
+				hidden_units=[10, 10],
+				training_examples=normalized_training_examples,
+				training_targets=training_targets,
+				validation_examples=normalized_validation_examples,
+				validation_targets=validation_targets)
+				
+			Final RMSE (period 09): 69.12
+			
+	Solution for Task 3:
+	
+		_ = train_nn_regression_model(
+			my_optimizer=tf.train.AdagradOptimizer(learning_rate=0.10),
+			steps=2000,
+			batch_size=50,
+			hidden_units=[10, 10],
+			training_examples=normalized_training_examples,
+			training_targets=training_targets,
+			validation_examples=normalized_validation_examples,
+			validation_targets=validation_targets)
+			
+		Final RMSE (period 09): 68.95
+		
+
+				
+				
+				

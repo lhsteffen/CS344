@@ -1,0 +1,30 @@
+Luke Steffen (lhs3)
+CS-344: Artificial Intelligence
+Lab 10
+April 19, 2020
+
+Exercise 10.3:
+
+	a. The confusion matrix shows which classes were misclassified as other classes. In this example, the confusion
+	matrix shows a graph of the model's accuracy when predicting data. The graph shown contains two axis labelled true
+	and predict label. At each point on the graph, there is a shaded box. In this example, there is a declining line
+	of darkly shaded boxes. Each point on the graph represents a pair consisting of an actual label and the model's
+	prediction. For example, (0, 0) represents the true label being 0 and the model predicting 0. The shade of the
+	box represents the statistical likelihood of the model predicting the number. The darker the shade, the more likely.
+	In the example, the point (0, 0) is a dark shade. This means that a label being 0 and the model predicting 0 is very
+	likely. This example shows a very accurate model.
+	
+	b. TensorFlow and Keras' networks differ based on the number of hidden units. TensorFlow's network consists of 100
+	hidden layers with 100 different nodes on each line. This is from the hidden_units argument in the classifier. Keras'
+	network differs because there is technically only three layers. Each network.add() function call adds another layer
+	to the network. The network.add() call that contains the parameter input_shape is the layer that connects to the input
+	layer and the integer passed into input_shape defines the number of nodes in the input layer. Each integer value passed
+	into each network.add() call defines how many nodes are in the layer. In the MNIST dataset, there are two network.add()
+	calls. This means there are three layers, the input layer, output layer, and a hidden layer. The input layer has 784
+	nodes, the hidden layer has 512 nodes, and the output layer has 10 nodes. I was able to make the TensorFlow model more
+	accurate by changing the learning rate to 0.01, with 5000 steps and a batch size of 30. The neural network is still a
+	100x100 matrix. These results gives a logloss error of 1.84.
+	
+	c. With only 10 steps, the weight visualization looks scattered and random. Each weight looks like it has no purpose, and
+	the pixel shading is very random. At 1000 steps, the weight visualization is far more organized. Each of the weights seem
+	to have a centerpoint in some area of the graph, and some weights have the beginning shape of a number.

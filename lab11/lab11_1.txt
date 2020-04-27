@@ -1,0 +1,39 @@
+Luke Steffen
+CS-344: Artificial Intelligence
+Lab 11
+April 26, 2020
+
+Exercise 11.1:
+
+	a. Sometimes a linear model can be better than a DNN. In scenarios where a linear model and a DNN have around the same accuracy,
+	a linear model would be a better option because it can be trained and used faster than a DNN. This is because a linear model are
+	trained using less parameters than a DNN.
+	
+	b. Both the linear model and the NN are about the same in accuracy, but the linear model is slightly more accurate. The linear
+	model has an accuracy of 78% while the NN has an accuracy of 72% when it is unimproved. 
+	
+	c. Embeddings can greatly help sentiment analysis with NNs. When embedding is used in a NN for sentiment analysis, the accuracy
+	of the model improved by around 10%. Before using embeddings, the model had an accuracy of 72% and an accuracy of 81% accuracy
+	when embeddings was used.
+	
+	d. Two words that have similar embeddings are "awful" and "worst." This makes sense because both of these words are used in a 
+	similar manner, with similar connotations. Both "awful" and "worst" are both used in negative connotations to describe objects
+	or situations. Both words are also synonyms, giving more reason as to why they would be grouped together.
+	
+	e. The best hyperparameter settings I was able to find was the default settings from Google, which are as follows.
+	
+		terms_feature_column = tf.feature_column.categorical_column_with_vocabulary_list(key="terms", 
+                                                                                 vocabulary_list=informative_terms)
+
+		terms_embedding_column = tf.feature_column.embedding_column(terms_feature_column, dimension=2)
+		feature_columns = [ terms_embedding_column ]
+
+		my_optimizer = tf.train.AdagradOptimizer(learning_rate=0.1)
+		my_optimizer = tf.contrib.estimator.clip_gradients_by_norm(my_optimizer, 5.0)
+
+		classifier = tf.estimator.DNNClassifier(
+			feature_columns=feature_columns,
+			hidden_units=[10,10],
+			optimizer=my_optimizer
+		)
+		

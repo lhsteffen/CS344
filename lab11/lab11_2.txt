@@ -1,0 +1,16 @@
+Luke Steffen
+CS-344: Artificial Intelligence
+Lab 11
+April 26, 2020
+
+Exercise 11.2:
+
+	a. The capital_gain and capital_loss values could be biased due to the fact that 90% of the values are 0. Over two-thirds of the
+	examples aslo represent males when the expected value should be one-half.
+	
+	b. When examining the marital status with gender, it becomes apparent that majority of the men are married-civ-spouse. Because men
+	outnumber women in this category 5 to 1, the under-represented group is married-civ-spouse women.
+	
+	c. Some of the features that can pose a problem to fairness are hours_per_week and gender.
+	
+	d. I do find disparities within race. It most often skews towards white people.

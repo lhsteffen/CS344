@@ -1,0 +1,28 @@
+This file is a logic proof of the blocks world problem.
+
+Written by: Luke Steffen (lhs3)
+Version: 05/10/2020
+
+Rules:
+
+	is_on(a, b).
+	is_on(b, c).
+	supports(table, c).
+
+	supports(X, Y) -> is_on(Y, X).
+	is_on(W, Z) -> above(W, Z).
+	above(X, Y) & above(Y, Z) -> above(X, Z).
+
+Proof:
+
+	above(a, table)
+	above(a, Y) & above(Y, table)
+	(try Y = b)
+	above(a, b) & above(b, table)
+	is_on(a, b) & above(b, c) & above(c, table)
+        is_on(a, b) & is_on(b, c) & is_on(c, table)
+	is_on(a, b) & is_on(b, c) & supports(table, c)
+	True	      True          True
+
+	above(a, table) = True
+	        

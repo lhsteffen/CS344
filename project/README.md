@@ -1,6 +1,7 @@
 # CIFAR-100 Model Analysis
 
 Created by: Luke Steffen
+
 Created on: 05/19/2020
 
 ## Project Vision

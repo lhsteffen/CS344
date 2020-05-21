@@ -16,10 +16,6 @@ accuracy of around 35-40% due to the type of data used for training.
 
 **from keras.datasets import cifar100**: Cifar-100 dataset used to train the keras model
 
-This dataset can be found at the following link.
-
-https://www.cs.toronto.edu/~kriz/cifar.html
-
 **import matplotlib.pyplot as plt**: Used to display a test image in the Jupyter Notebook
 
 **from keras import layers**: Used to add layers to a Keras model

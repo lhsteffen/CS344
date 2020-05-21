@@ -42,10 +42,14 @@ https://www.cs.toronto.edu/~kriz/cifar.html
 
 ## How to run this program
 
-*Maintanence Needed*
+To run this program, you will need all of the libraries stated in the bibliography section of report.ipynb. In 
+addition to the libraries, you will also need an evironment that is capable of running Jupyter Notebooks. If you
+have a Google account, you can run this program on Google Colab for free with little hassle. Once all of these 
+requirements have been met, simply pull this Github repository and run report.ipynb in your Jupyter Notebook 
+supported IDE of choice.
 
-## References
+## Dataset References
 
-CIFAR-10/100 datasets: [https://www.cs.toronto.edu/~kriz/cifar.html](https://www.cs.toronto.edu/~kriz/cifar.html)
+CIFAR-10/100 datasets: https://www.cs.toronto.edu/~kriz/cifar.html
 
 
